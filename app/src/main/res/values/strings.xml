@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Our First App 1.1a</string>
+    <string name="fragment_page">Fragment Page</string>
+    <string name="_0">0</string>
 </resources>
