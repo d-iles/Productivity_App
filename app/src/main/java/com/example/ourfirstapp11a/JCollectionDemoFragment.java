@@ -1,4 +1,4 @@
-package com.example.ourfirstapp11a;
+/*package com.example.ourfirstapp11a;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -20,7 +20,7 @@ public class CollectionDemoFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.page_fragment_layout, container, false);
+        return inflater.inflate(R.layout.activity_main, container, false);
     }
 
     @Override
@@ -29,4 +29,4 @@ public class CollectionDemoFragment extends Fragment {
         viewPager = view.findViewById(R.id.pager);
         viewPager.setAdapter(demoCollectionAdapter);
     }
-}
+} */
