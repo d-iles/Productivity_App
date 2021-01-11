@@ -23,6 +23,7 @@ public class FirstFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.item_view_pager, container, false );
+        //view.findViewById(R.id.text1).setText("" + pageNumber);
         return view;
     }
 }
