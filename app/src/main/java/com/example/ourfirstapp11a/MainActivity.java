@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     public static ViewPager2 viewPager2;
     private FragmentStateAdapter viewPagerAdapter;
+    private TabLayout tabLayout;
     private String[] title = new String[] {"first", "second", "third", "fourth"};
 
     @Override
@@ -24,12 +25,24 @@ public class MainActivity extends AppCompatActivity {
         viewPagerAdapter = new ViewPagerAdapter(MainActivity.this);
         viewPager2.setAdapter(viewPagerAdapter);
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabLayout);
-        new TabLayoutMediator(tabLayout, viewPager2, new TabLayoutMediator.TabConfigurationStrategy() {
+        tabLayout = (TabLayout) findViewById(R.id.tabLayout);
+
+        TabLayoutMediator mediator = new TabLayoutMediator(tabLayout, viewPager2, new TabLayoutMediator.TabConfigurationStrategy() {
             @Override
             public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
                 tab.setText("Tab" + position+1);
             }
+
         });
+
+        tabLayout.selectTab(tabLayout.getTabAt(1));
+        viewPager2.setCurrentItem(1);
+
     }
+
+    void selectPage(int pageIndex){
+        tabLayout.setScrollPosition(pageIndex,0f,true);
+        viewPager2.setCurrentItem(pageIndex);
+    }
+
 }
