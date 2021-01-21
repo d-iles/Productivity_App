@@ -15,8 +15,8 @@
         android:text="@string/_0"
 
         android:textAlignment="center"
-        android:textSize="40sp"
         android:textColor="@color/black"
+        android:textSize="40sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,8 +28,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="24dp"
-        android:textColor="@color/black"
         android:text="Task Input"
+        android:textColor="@color/black"
         android:textSize="40sp"
 
         android:textStyle="bold"
@@ -40,7 +40,6 @@
 
     <EditText
         android:id="@+id/editText1"
-        android:inputType="textCapWords|textAutoCorrect"
         android:layout_width="350dp"
         android:layout_height="42dp"
         android:layout_alignBottom="@+id/textView2"
@@ -50,6 +49,7 @@
         android:background="@drawable/custom_input"
         android:ems="10"
         android:hint="Title"
+        android:inputType="textCapWords|textAutoCorrect"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
         android:textSize="18sp"
@@ -67,7 +67,7 @@
         android:layout_height="75dp"
         android:layout_alignBottom="@+id/textView2"
         android:layout_gravity="center_vertical"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/custom_input"
         android:ems="10"
         android:gravity="top|left"
@@ -81,7 +81,7 @@
         android:scrollbars="vertical"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.54"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText1"
         tools:ignore="MissingConstraints">
@@ -89,12 +89,22 @@
         <requestFocus />
     </EditText>
 
-    <androidx.constraintlayout.widget.Group
-        android:id="@+id/group"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="visible"
-        app:constraint_referenced_ids="editText1" />
+    <TextView
+        android:id="@+id/et_date"
+        android:layout_width="125dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="236dp"
+        android:background="@drawable/custom_input"
+        android:text="Select Date"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:gravity="center_vertical"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editText2"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
