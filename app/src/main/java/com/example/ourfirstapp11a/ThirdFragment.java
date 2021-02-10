@@ -66,6 +66,7 @@ public class ThirdFragment extends Fragment {
         };
 
         TimePicker time = new TimePicker(view.findViewById(R.id.et_hour),ThirdFragment.this.getContext());
+        time.setListener();
 
         return view;
     }
