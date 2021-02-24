@@ -19,7 +19,7 @@ public class ViewPagerAdapter extends FragmentStateAdapter {
             case 0:
                 return new FirstFragment(0);
             case 1:
-                return new FirstFragment(1);
+                return new SecondFragment(1);
             case 2:
                 return new ThirdFragment(2);
             default:

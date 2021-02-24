@@ -4,11 +4,15 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private FragmentStateAdapter viewPagerAdapter;
     private TabLayout tabLayout;
     private String[] title = new String[] {"first", "second", "third", "fourth"};
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
