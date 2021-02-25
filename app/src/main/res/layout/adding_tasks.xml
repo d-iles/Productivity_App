@@ -6,21 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ThirdFragment">
 
-    <TextView
-        android:id="@+id/text1"
-        android:layout_width="191dp"
-        android:layout_height="104dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="608dp"
-        android:text="@string/_0"
-
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="40sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView2"
