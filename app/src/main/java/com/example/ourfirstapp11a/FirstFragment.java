@@ -36,6 +36,10 @@ public class FirstFragment extends Fragment {
         tasks.add(new Task("Call Mom"));
         tasks.add(new Task("Clean Room"));
         tasks.add(new Task("Do Homework"));
+        tasks.add(new Task("Hang out with friends"));
+        tasks.add(new Task("Fix car"));
+        tasks.add(new Task("Sleep"));
+
 
         TaskAdapter adapter = new TaskAdapter(tasks);
 
