@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ThirdFragment">
 
-
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
@@ -79,7 +78,7 @@
         android:layout_width="125dp"
         android:layout_height="35dp"
         android:layout_marginTop="252dp"
-        android:background="@drawable/custom_input"
+        android:background="@drawable/custom_input_button"
         android:gravity="center_vertical"
         android:hint="Select Date"
         android:paddingStart="12dp"
@@ -96,7 +95,7 @@
         android:layout_width="180dp"
         android:layout_height="35dp"
         android:layout_marginTop="252dp"
-        android:background="@drawable/custom_input"
+        android:background="@drawable/custom_input_button"
         android:drawableLeft="@drawable/ic_baseline_access_time_24"
         android:drawablePadding="4dp"
         android:gravity="center_vertical"

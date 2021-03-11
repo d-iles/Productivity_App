@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
@@ -20,12 +21,12 @@ public class MainActivity extends AppCompatActivity {
     private FragmentStateAdapter viewPagerAdapter;
     private TabLayout tabLayout;
     private String[] title = new String[] {"first", "second", "third", "fourth"};
-    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         viewPager2 = findViewById(R.id.viewPager);
         viewPagerAdapter = new ViewPagerAdapter(MainActivity.this);
         viewPager2.setAdapter(viewPagerAdapter);
