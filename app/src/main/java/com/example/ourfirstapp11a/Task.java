@@ -3,15 +3,25 @@ package com.example.ourfirstapp11a;
 import java.util.Calendar;
 
 public class Task {
-    private int Importance;
+    private int importance = 0;
     private String taskName;
     private Calendar dueDate;
 
     /* Add a calculator for importance/worthiness in this later,
     maybe add a parameter(s) as a starting point for calculator */
+
+    // Creating the task object
     public Task(String taskName) {
-        this.taskName = taskName;
+        setTaskName(taskName);
     }
+
+    // Create the task object, but with more parameters
+    public Task(String taskName, Calendar dueDate, int importance) {
+        setTaskName(taskName);
+        setDueDate(dueDate);
+        setImportance(importance);
+    }
+
 
     public String getName() {
         return taskName;
@@ -22,10 +32,21 @@ public class Task {
     }
 
     public Calendar getDueDate() {
+        if (dueDate == null) {
+            return Calendar.getInstance();
+        }
         return dueDate;
     }
 
     public void setDueDate(Calendar dueDate) {
         this.dueDate = dueDate;
+    }
+
+    public void setImportance(int importance) {
+        this.importance = importance;
+    }
+
+    public int getImportance() {
+        return importance;
     }
 }
