@@ -10,8 +10,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.LayoutInflater;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
@@ -32,6 +35,8 @@ public class ThirdFragment extends Fragment {
 
     private int pageNumber = 2;
 
+    AutoCompleteTextView aCTV; // This holds Priority
+
     TextView dateButton; // This is the Date button
     TextView timeButton; // This is the hour, minute button
     EditText editText1, editText2; // Title, desc
@@ -47,6 +52,7 @@ public class ThirdFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
     }
 
     /** onCreateView is called to have the fragment instantiate its user interface view. */
@@ -126,6 +132,20 @@ public class ThirdFragment extends Fragment {
             }
         });
 
+        aCTV= view.findViewById(R.id.autoCompleteTextView);
+        ArrayAdapter<String> aAdapter = new ArrayAdapter<String>(this.getContext(), R.layout.dropdown_item, getResources().getStringArray(R.array.Priority));
+        aCTV.setAdapter(aAdapter);
+
+        aCTV.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                hideSoftKeyboard();
+                clearFocus();
+                aCTV.showDropDown();
+            }
+        });
+
         return view;
     }
 
@@ -146,6 +166,7 @@ public class ThirdFragment extends Fragment {
     public void clearFocus() {
         editText1.clearFocus();
         editText2.clearFocus();
+        aCTV.clearFocus();
     }
 
 }
