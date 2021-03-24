@@ -6,7 +6,7 @@ public class Task {
     private String importance = "";
     private String taskName = "";
     private String description = "Default Description";
-    private Calendar dueDate = null;
+    private int[] dueDate = new int[5];
 
     /* Add a calculator for importance/worthiness in this later,
     maybe add a parameter(s) as a starting point for calculator */
@@ -17,7 +17,7 @@ public class Task {
     }
 
     // Create the task object, but with more parameters
-    public Task(String taskName, Calendar dueDate, String importance, String description) {
+    public Task(String taskName, int[] dueDate, String importance, String description) {
         setTaskName(taskName);
         setDueDate(dueDate);
         setImportance(importance);
@@ -33,14 +33,9 @@ public class Task {
         this.taskName = taskName;
     }
 
-    public Calendar getDueDate() {
-        if (dueDate == null) {
-            return Calendar.getInstance();
-        }
-        return dueDate;
-    }
+    public int[] getDueDate() { return dueDate; }
 
-    public void setDueDate(Calendar dueDate) {
+    public void setDueDate(int[] dueDate) {
         this.dueDate = dueDate;
     }
 
