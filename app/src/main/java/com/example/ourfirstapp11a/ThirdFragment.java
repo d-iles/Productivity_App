@@ -160,14 +160,13 @@ public class ThirdFragment extends Fragment {
                 clearFocus();
 
                 taskSelection.set(tYear, tMonth, tDay,tHour,tMinute); // sets the calender object
-                //Task current = new Task(editText1.getText(),taskSelection,aCTV.getText(),editText2.getText());
-                //FirstFragment.addTask(current);
+                Task current = new Task(editText1.getText().toString(),taskSelection,aCTV.getText().toString(),editText2.getText().toString());
+                FirstFragment.addTask(current);
 
                 editText1.setText("");
                 editText2.setText("");
                 timeButton.setText("");
                 dateButton.setText("");
-                aCTV.setSelection(0);
                 aCTV.setText("Must");
                 taskSelection.clear();
                 tYear = 0;
