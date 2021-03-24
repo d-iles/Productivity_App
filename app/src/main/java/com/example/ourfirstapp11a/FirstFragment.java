@@ -10,12 +10,15 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class FirstFragment extends Fragment {
 
     private int pageNumber = 0;
 
     private static ArrayList<Task> tasks = new ArrayList<>();
+    private static TaskAdapter adapter;
+
 
     public FirstFragment(int number) {
         pageNumber = number;
@@ -33,7 +36,7 @@ public class FirstFragment extends Fragment {
 
         RecyclerView rvTasks = view.findViewById(R.id.rvTasks);
 
-        TaskAdapter adapter = new TaskAdapter(tasks);
+        adapter = new TaskAdapter(tasks);
 
         rvTasks.setAdapter(adapter);
 
@@ -44,5 +47,6 @@ public class FirstFragment extends Fragment {
 
     public static void addTask(Task task) {
         tasks.add(task);
+        adapter.notifyItemInserted(tasks.size()-1);
     }
 }
