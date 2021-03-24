@@ -35,12 +35,15 @@ public class ThirdFragment extends Fragment {
 
     private int pageNumber = 2;
 
+    TextView submitButton; // This is the button that submits everything to the list
     AutoCompleteTextView aCTV; // This holds Priority
 
     TextView dateButton; // This is the Date button
     TextView timeButton; // This is the hour, minute button
     EditText editText1, editText2; // Title, desc
-    int tHour, tMinute; // Hour, minute for picking time
+    int tYear, tMonth, tDay, tHour, tMinute; // Hour, minute for picking time
+    Calendar taskSelection = Calendar.getInstance();
+
     DatePickerDialog.OnDateSetListener setListener; // Used for picking Date
 
     /** constructor for ThirdFragment */
@@ -86,7 +89,10 @@ public class ThirdFragment extends Fragment {
         setListener = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                tMonth = month;
                 month = month+1;
+                tYear = year;
+                tDay = dayOfMonth;
                 String date = month+"/"+dayOfMonth+"/"+year;
                 dateButton.setText(date);
             }
@@ -143,6 +149,33 @@ public class ThirdFragment extends Fragment {
                 hideSoftKeyboard();
                 clearFocus();
                 aCTV.showDropDown();
+            }
+        });
+
+        submitButton = view.findViewById(R.id.submit);
+        submitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                hideSoftKeyboard();
+                clearFocus();
+
+                taskSelection.set(tYear, tMonth, tDay,tHour,tMinute); // sets the calender object
+                //Task current = new Task(editText1.getText(),taskSelection,aCTV.getText(),editText2.getText());
+                //FirstFragment.addTask(current);
+
+                editText1.setText("");
+                editText2.setText("");
+                timeButton.setText("");
+                dateButton.setText("");
+                aCTV.setSelection(0);
+                aCTV.setText("Must");
+                taskSelection.clear();
+                tYear = 0;
+                tMonth = 0;
+                tDay = 0;
+                tHour = 0;
+                tMinute = 0;
+
             }
         });
 
