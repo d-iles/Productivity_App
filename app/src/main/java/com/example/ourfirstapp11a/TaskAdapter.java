@@ -20,6 +20,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
         public TextView dateTextView;
         public TextView importanceTextView;
         public TextView timeTextView;
+        public TextView descriptionTextView;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -28,6 +29,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
             dateTextView = itemView.findViewById(R.id.task_date);
             importanceTextView = itemView.findViewById(R.id.task_importance);
             timeTextView = itemView.findViewById(R.id.task_time);
+            descriptionTextView = itemView.findViewById(R.id.task_description);
         }
     }
 
@@ -71,7 +73,10 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
         /* Adding the importance textview. This might be changed later depending on how we want to
         handle the priority of tasks */
         TextView textViewImportance = holder.importanceTextView;
-        textViewImportance.setText("Importance: " + Integer.toString(task.getImportance()));
+        textViewImportance.setText("Worthiness: " + task.getImportance());
+
+        TextView textViewDescription = holder.descriptionTextView;
+        textViewDescription.setText(task.getDescription());
     }
 
     @Override
