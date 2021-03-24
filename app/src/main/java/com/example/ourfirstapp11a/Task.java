@@ -3,9 +3,10 @@ package com.example.ourfirstapp11a;
 import java.util.Calendar;
 
 public class Task {
-    private int importance = 0;
-    private String taskName;
-    private Calendar dueDate;
+    private String importance = "";
+    private String taskName = "";
+    private String description = "Default Description";
+    private Calendar dueDate = null;
 
     /* Add a calculator for importance/worthiness in this later,
     maybe add a parameter(s) as a starting point for calculator */
@@ -16,10 +17,11 @@ public class Task {
     }
 
     // Create the task object, but with more parameters
-    public Task(String taskName, Calendar dueDate, int importance) {
+    public Task(String taskName, Calendar dueDate, String importance, String description) {
         setTaskName(taskName);
         setDueDate(dueDate);
         setImportance(importance);
+        setDescription(description);
     }
 
 
@@ -42,11 +44,19 @@ public class Task {
         this.dueDate = dueDate;
     }
 
-    public void setImportance(int importance) {
+    public void setImportance(String importance) {
         this.importance = importance;
     }
 
-    public int getImportance() {
+    public String getImportance() {
         return importance;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getDescription() {
+        return description;
     }
 }

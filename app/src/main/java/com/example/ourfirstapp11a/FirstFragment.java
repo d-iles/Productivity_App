@@ -15,7 +15,7 @@ public class FirstFragment extends Fragment {
 
     private int pageNumber = 0;
 
-    ArrayList<Task> tasks = new ArrayList<>();
+    private static ArrayList<Task> tasks = new ArrayList<>();
 
     public FirstFragment(int number) {
         pageNumber = number;
@@ -33,29 +33,18 @@ public class FirstFragment extends Fragment {
 
         RecyclerView rvTasks = view.findViewById(R.id.rvTasks);
 
-        Task task1 = new Task("Call Mom");
-        Task task2 = new Task("Clean Room");
-        Task task3 = new Task("Do Homework");
-        Task task4 = new Task("Hang out with friends");
-        Task task5 = new Task("Fix car");
-        Task task6 = new Task("Sleep");
-
-
-
-        tasks.add(task1);
-        tasks.add(task2);
-        tasks.add(task3);
-        tasks.add(task4);
-        tasks.add(task5);
-        tasks.add(task6);
-
-
         TaskAdapter adapter = new TaskAdapter(tasks);
 
         rvTasks.setAdapter(adapter);
 
         rvTasks.setLayoutManager(new LinearLayoutManager(FirstFragment.this.getContext()));
 
+        addTask(new Task("Call mom"));
+
         return view;
+    }
+
+    public static void addTask(Task task) {
+        tasks.add(task);
     }
 }
