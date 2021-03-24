@@ -39,8 +39,6 @@ public class FirstFragment extends Fragment {
 
         rvTasks.setLayoutManager(new LinearLayoutManager(FirstFragment.this.getContext()));
 
-        addTask(new Task("Call mom"));
-
         return view;
     }
 
