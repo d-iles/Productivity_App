@@ -42,7 +42,7 @@ public class ThirdFragment extends Fragment {
     TextView timeButton; // This is the hour, minute button
     EditText editText1, editText2; // Title, desc
     int tYear, tMonth, tDay, tHour, tMinute; // Hour, minute for picking time
-    Calendar taskSelection = Calendar.getInstance();
+    int[] taskDateSelection = new int[5];
 
     DatePickerDialog.OnDateSetListener setListener; // Used for picking Date
 
@@ -159,16 +159,17 @@ public class ThirdFragment extends Fragment {
                 hideSoftKeyboard();
                 clearFocus();
 
-                taskSelection.set(tYear, tMonth, tDay,tHour,tMinute); // sets the calender object
-                Task current = new Task(editText1.getText().toString(),taskSelection,aCTV.getText().toString(),editText2.getText().toString());
+                //taskSelection.set(tYear, tMonth, tDay,tHour,tMinute); // sets the calender object
+                taskDateSelection[0] = tYear; taskDateSelection[1] = tMonth; taskDateSelection[2] = tDay; taskDateSelection[3] = tHour;
+                taskDateSelection[4] = tMinute;
+                Task current = new Task(editText1.getText().toString(),taskDateSelection,aCTV.getText().toString(),editText2.getText().toString());
                 FirstFragment.addTask(current);
 
                 editText1.setText("");
                 editText2.setText("");
                 timeButton.setText("");
                 dateButton.setText("");
-                aCTV.setText("Must");
-                taskSelection.clear();
+                taskDateSelection = new int[5];
                 tYear = 0;
                 tMonth = 0;
                 tDay = 0;
