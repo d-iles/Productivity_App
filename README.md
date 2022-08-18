@@ -8,7 +8,7 @@ Hello world! This is a collaborative project between Daniel Iles and David Garci
 * Android Studio 4.1.1
 * Java SDK (using 30.0.2)
 
-This app is not deployed, and in order to test must be downloaded and ran through the Android Studio dev application. 
+This app is not deployed, and in order to test must be cloned and emulated through the Android Studio dev application. 
 
 ## Additional Info
 This project is open-source for collaboration! Feel free to download a copy and create a pull request if you would like to participate in development. 
