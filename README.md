@@ -1,4 +1,15 @@
-# Productivity_App_1.2a
+# Productivity_App
+v1.2a
 
+## Introduction
+Hello world! This is a collaborative project between Daniel Iles and David Garcia. The purpose of this productivity app is to organize the input tasks in order of priority. In the current state of the app the user can input tasks (title, description, date by, & priority) into a task list in the swipeable interface. 
 
-Hello world! This is a collaborative project between Daniel Iles and David Garcia. We are developing a productivity app that will organize the input tasks in order of priority. We are using Android Studio (primarily with Java) to create our app. The SDK we are using is (Version 30.0.2). Please let us know of any suggestions you may have on how we can improve our code!
+## Prerequisites
+* Android Studio 4.1.1
+* Java SDK (using 30.0.2)
+
+This app is not deployed, and in order to test must be downloaded and ran through the Android Studio dev application. 
+
+## Additional Info
+This project is open-source for collaboration! Feel free to download a copy and create a pull request if you would like to participate in development. 
+
