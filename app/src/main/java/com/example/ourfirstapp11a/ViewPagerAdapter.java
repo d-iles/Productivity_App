@@ -17,14 +17,12 @@ public class ViewPagerAdapter extends FragmentStateAdapter {
     @Override
     public Fragment createFragment(int pos) {
         switch(pos) {
-            case 0:
-                return new FirstFragment(0);
             case 1:
                 return new SecondFragment(1);
             case 2:
                 return new ThirdFragment(2);
             default:
-                return new FirstFragment(0);
+                return new FirstFragment(0); // includes pos = 0
         }
     }
 
